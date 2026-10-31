@@ -64,7 +64,7 @@ export function AutomationCard() {
         <p className="text-xs text-muted">{footer}</p>
         <div className="flex shrink-0 gap-2">
           <span className="rounded-md border border-line px-3 py-1.5 text-xs font-semibold text-ink/75">Edit</span>
-          <span className="rounded-md bg-ink px-3 py-1.5 text-xs font-semibold text-paper">Approve</span>
+          <span className="rounded-md bg-forest px-3 py-1.5 text-xs font-semibold text-surface">Approve</span>
         </div>
       </div>
     </div>

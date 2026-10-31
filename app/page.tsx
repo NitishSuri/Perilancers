@@ -6,7 +6,6 @@ import { JsonLd } from "@/components/JsonLd";
 import { Pricing } from "@/components/Pricing";
 import { Process } from "@/components/Process";
 import { Services } from "@/components/Services";
-import { Team } from "@/components/Team";
 import { TechStack } from "@/components/TechStack";
 import { Testimonials } from "@/components/Testimonials";
 import { WhatWeBuild } from "@/components/WhatWeBuild";
@@ -37,7 +36,6 @@ export default function HomePage() {
       <Process />
       <WhatWeBuild />
       <TechStack />
-      <Team />
       <Pricing />
       <FAQ />
       {SHOW_TESTIMONIALS && <Testimonials />}

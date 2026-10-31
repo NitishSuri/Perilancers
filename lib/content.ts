@@ -40,17 +40,20 @@ export const SHOW_TESTIMONIALS = false;
 /*                                 Site basics                                */
 /* -------------------------------------------------------------------------- */
 
-const whatsappNumber = "YOUR-WHATSAPP-NUMBER-WITH-COUNTRY-CODE"; // digits only, e.g. 15551234567
+// WhatsApp is hidden for now. To bring it back: set the number here, uncomment `whatsappUrl` below,
+// and uncomment the WhatsApp blocks in components/Contact.tsx and components/Footer.tsx.
+// const whatsappNumber = "YOUR-WHATSAPP-NUMBER-WITH-COUNTRY-CODE"; // digits only, e.g. 15551234567
 
 export const site = {
   name: "Perilancers",
   /** Canonical URL, no trailing slash. */
-  url: "https://YOUR-DOMAIN.com",
+  url: "https://perilancers.com",
   tagline: "One small team for your entire digital product.",
   description:
     "Perilancers is a two-person tech studio that plans, designs, builds, scales, and markets digital products, and builds AI agents and automations that do real work for startups and growing businesses worldwide.",
-  email: "YOUR-BUSINESS-EMAIL@YOUR-DOMAIN.com",
-  whatsappUrl: `https://wa.me/${whatsappNumber}`,
+  /** Official inbox: shown on the site and where contact form submissions are delivered. */
+  email: "work@perilancers.com",
+  // whatsappUrl: `https://wa.me/${whatsappNumber}`,
   linkedinUrl: "https://www.linkedin.com/company/YOUR-COMPANY-PAGE",
   /** Paste verification codes from Google Search Console / Bing Webmaster Tools. */
   verification: {
@@ -79,7 +82,6 @@ export const nav: { label: string; href: string; highlight?: boolean }[] = [
   { label: "Why Us", href: "/#why" },
   { label: "Process", href: "/#process" },
   { label: "What We Build", href: "/#build" },
-  { label: "Team", href: "/#team" },
   { label: "Pricing", href: "/#pricing" },
   { label: "FAQ", href: "/#faq" },
 ];

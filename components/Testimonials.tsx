@@ -18,7 +18,7 @@ export function Testimonials() {
           <li key={t.name}>
             <Reveal delay={(i % 3) * 0.06} className="h-full">
               <figure className={cn(cardClass, "flex h-full flex-col p-6 sm:p-8")}>
-                <Quote className="size-7 text-orange-deep" aria-hidden="true" />
+                <Quote className="size-7 text-forest" aria-hidden="true" />
                 <blockquote className="mt-4 flex-1 text-lg">&ldquo;{t.quote}&rdquo;</blockquote>
                 <figcaption className="mt-6">
                   <p className="font-semibold">{t.name}</p>

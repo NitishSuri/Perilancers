@@ -1,18 +1,20 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { footer, nav, services, site } from "@/lib/content";
-import { LinkedInIcon, WhatsAppIcon } from "./icons";
+import { LinkedInIcon } from "./icons";
+// import { WhatsAppIcon } from "./icons";
 import { Logo } from "./Logo";
 import { Container } from "./ui/Container";
 
 const socials = [
   { label: "LinkedIn", href: site.linkedinUrl, icon: LinkedInIcon, external: true },
-  { label: "WhatsApp", href: site.whatsappUrl, icon: WhatsAppIcon, external: true },
+  // WhatsApp hidden for now. See the note in lib/content.ts to re-enable.
+  // { label: "WhatsApp", href: site.whatsappUrl, icon: WhatsAppIcon, external: true },
   { label: "Email", href: `mailto:${site.email}`, icon: Mail, external: false },
 ];
 
 const heading = "text-xs font-semibold tracking-[0.18em] text-muted uppercase";
-const link = "text-sm text-ink/75 transition-colors hover:text-orange-deep";
+const link = "text-sm text-ink/75 transition-colors hover:text-forest";
 
 export function Footer() {
   const year = new Date().getFullYear();

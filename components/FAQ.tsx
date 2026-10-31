@@ -11,7 +11,7 @@ export function FAQ() {
     <Section id="faq" tone="paper2">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
         <Reveal className="lg:sticky lg:top-28 lg:self-start">
-          <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-orange-deep uppercase">{faqSection.eyebrow}</p>
+          <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-forest uppercase">{faqSection.eyebrow}</p>
           <h2 id="faq-title" className="text-4xl leading-[1.08] font-bold sm:text-5xl">
             {faqSection.title} <Highlight>{faqSection.highlight}</Highlight>
           </h2>
@@ -28,7 +28,7 @@ export function FAQ() {
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-5 transition-colors hover:bg-paper/60 sm:px-6 [&::-webkit-details-marker]:hidden">
                   <h3 className="font-sans text-base font-semibold sm:text-lg">{faq.question}</h3>
                   <Plus
-                    className="size-5 shrink-0 text-muted transition-transform duration-300 group-open:rotate-45 group-open:text-orange-deep"
+                    className="size-5 shrink-0 text-muted transition-transform duration-300 group-open:rotate-45 group-open:text-forest"
                     aria-hidden="true"
                   />
                 </summary>

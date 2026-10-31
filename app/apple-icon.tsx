@@ -13,12 +13,12 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#15120E",
+          background: "#2F4F3E",
         }}
       >
         <svg width="120" height="120" viewBox="0 0 24 24">
           <path
-            fill="#FF5A1F"
+            fill="#DFE7D6"
             d="M10.6 1.5h2.8l-.3 7.1 6-3.8 1.4 2.4-6.3 3.3 6.3 3.3-1.4 2.4-6-3.8.3 7.1h-2.8l.3-7.1-6 3.8-1.4-2.4 6.3-3.3-6.3-3.3 1.4-2.4 6 3.8z"
           />
         </svg>

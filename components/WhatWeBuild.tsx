@@ -1,10 +1,11 @@
-import { Check, Info } from "lucide-react";
+import { Info } from "lucide-react";
 import { buildSection, projectIdeas } from "@/lib/content";
 import { cardClass, cn } from "@/lib/utils";
 import { ProjectVisual } from "./ProjectVisual";
 import { Reveal } from "./ui/Reveal";
 import { Section } from "./ui/Section";
 import { SectionHeading } from "./ui/SectionHeading";
+import { DoodleCheck } from "@/components/ui/Doodle";
 
 export function WhatWeBuild() {
   return (
@@ -12,7 +13,7 @@ export function WhatWeBuild() {
       <SectionHeading id="build" {...buildSection} />
 
       <Reveal className="mx-auto -mt-6 mb-12 flex max-w-fit items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-sm text-muted">
-        <Info className="size-4 shrink-0 text-orange-deep" aria-hidden="true" />
+        <Info className="size-4 shrink-0 text-forest" aria-hidden="true" />
         {buildSection.disclaimer}
       </Reveal>
 
@@ -38,7 +39,7 @@ export function WhatWeBuild() {
                   <ul className="mt-4 space-y-2 text-sm">
                     {p.includes.map((item) => (
                       <li key={item} className="flex items-start gap-2.5">
-                        <Check className="mt-0.5 size-4 shrink-0 text-orange-deep" aria-hidden="true" />
+                        <DoodleCheck className="mt-0.5" />
                         {item}
                       </li>
                     ))}

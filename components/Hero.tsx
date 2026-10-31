@@ -22,7 +22,7 @@ export function Hero() {
       <Container className="grid items-center gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
         <div className="animate-fade-up">
           <p className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 text-xs font-medium text-muted sm:text-sm">
-            <span className="size-1.5 rounded-full bg-orange" />
+            <span className="size-1.5 rounded-full bg-sage" />
             {hero.badge}
           </p>
 

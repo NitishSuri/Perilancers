@@ -9,6 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { services, site } from "@/lib/content";
 import { breadcrumbJsonLd } from "@/lib/seo";
 import { cardClass, cn } from "@/lib/utils";
+import { DoodleIcon } from "@/components/ui/Doodle";
 
 export const metadata: Metadata = {
   title: "Services: AI Agents, Web, Design, Cloud, Product & Marketing",
@@ -36,10 +37,10 @@ export default function ServicesPage() {
             <li key={slug}>
               <Reveal delay={(i % 3) * 0.06} className="h-full">
                 <Link href={`/services/${slug}`} className={cn(cardClass, "flex h-full flex-col p-7")}>
-                  <span className="flex size-11 items-center justify-center rounded-xl bg-orange/10 text-orange-deep"><Icon className="size-5" aria-hidden="true" /></span>
+                  <DoodleIcon icon={Icon} variant={i} />
                   <h2 className="mt-5 text-2xl font-bold">{title}</h2>
                   <p className="mt-2 flex-1 text-muted">{description}</p>
-                  <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold transition-colors group-hover:text-orange-deep">
+                  <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold transition-colors group-hover:text-forest">
                     Learn more
                     <ArrowUpRight className="size-4" aria-hidden="true" />
                   </span>

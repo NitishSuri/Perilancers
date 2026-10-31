@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check, FileInput, MessageSquare, Search, Sparkles, Table2 } from "lucide-react";
+import { ArrowRight, FileInput, MessageSquare, Search, Sparkles, Table2 } from "lucide-react";
 import { aiSection, ctaHref } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { AutomationCard } from "./AutomationCard";
@@ -8,9 +8,10 @@ import { ButtonLink } from "./ui/ButtonLink";
 import { Reveal } from "./ui/Reveal";
 import { Section } from "./ui/Section";
 import { SectionHeading } from "./ui/SectionHeading";
+import { DoodleCheck, DoodleIcon } from "@/components/ui/Doodle";
 
 const tile =
-  "group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface transition duration-300 hover:border-ink/15 hover:shadow-[0_24px_48px_-28px_rgba(23,20,15,0.35)]";
+  "group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface transition duration-300 hover:border-ink/15 hover:shadow-[0_24px_48px_-28px_rgba(61,43,31,0.35)]";
 
 function TileText({ title, text }: { title: string; text?: string }) {
   return (
@@ -25,9 +26,9 @@ function TileText({ title, text }: { title: string; text?: string }) {
 function ChatVisual() {
   return (
     <div aria-hidden="true" className="flex flex-col gap-2 rounded-2xl bg-paper-2 p-4 text-xs">
-      <div className="self-end rounded-2xl rounded-br-sm bg-orange-deep px-3 py-2 text-white">Do you ship to the UK?</div>
+      <div className="self-end rounded-2xl rounded-br-sm bg-forest px-3 py-2 text-surface">Do you ship to the UK?</div>
       <div className="flex items-end gap-2">
-        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#1f9d55] text-white">
+        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#1f9d55] text-surface">
           <WhatsAppIcon className="size-3.5" />
         </span>
         <div className="rounded-2xl rounded-bl-sm border border-line bg-surface px-3 py-2">
@@ -50,16 +51,14 @@ function WorkflowVisual() {
       {apps.map(({ icon: Icon, label }, i) => (
         <div key={label} className="flex flex-1 items-center last:flex-none">
           <div className="flex flex-col items-center gap-1.5">
-            <span className="flex size-10 items-center justify-center rounded-xl border border-line bg-surface">
-              <Icon className="size-4 text-orange-deep" />
-            </span>
+            <DoodleIcon icon={Icon} variant={i} size="sm" />
             <span className="text-[11px] text-muted">{label}</span>
           </div>
           {i < apps.length - 1 && (
             <div className="relative mx-2 mb-5 h-px flex-1 bg-ink/15">
               <span
                 style={{ animationDelay: `${i * 1.5}s` }}
-                className="absolute top-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 animate-packet rounded-full bg-orange"
+                className="absolute top-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 animate-packet rounded-full bg-sage"
               />
             </div>
           )}
@@ -76,7 +75,7 @@ function ProductVisual() {
       <div className="flex items-center gap-2 rounded-xl border border-line bg-surface px-3 py-2.5 text-sm">
         <Search className="size-4 text-muted" />
         <span className="flex-1 truncate text-ink/80">Invoices over $500 from last month</span>
-        <Sparkles className="size-4 text-orange-deep" />
+        <Sparkles className="size-4 text-forest" />
       </div>
       <ul className="mt-3 space-y-2 text-xs">
         {[
@@ -146,7 +145,7 @@ export function AISection() {
             <ul className="space-y-2.5">
               {aiSection.trust.map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm">
-                  <Check className="mt-0.5 size-4 shrink-0 text-green" aria-hidden="true" />
+                  <DoodleCheck className="mt-0.5" />
                   {item}
                 </li>
               ))}
@@ -162,7 +161,7 @@ export function AISection() {
         </ButtonLink>
         <Link
           href="/services/ai-agents-automation"
-          className="px-3 py-2 text-sm font-semibold text-ink underline decoration-ink/25 underline-offset-4 transition-colors hover:text-orange-deep hover:decoration-orange-deep"
+          className="px-3 py-2 text-sm font-semibold text-ink underline decoration-ink/25 underline-offset-4 transition-colors hover:text-forest hover:decoration-forest"
         >
           {aiSection.learnMore}
         </Link>

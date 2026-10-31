@@ -9,7 +9,7 @@ import { buttonClass } from "./ui/ButtonLink";
 import { cn } from "@/lib/utils";
 
 const fieldClass =
-  "w-full rounded-xl border bg-paper/60 px-4 py-3 text-ink placeholder:text-muted/70 transition focus:border-orange-deep focus:bg-surface focus:ring-4 focus:ring-orange/10 focus:outline-none";
+  "w-full rounded-xl border bg-paper/60 px-4 py-3 text-ink placeholder:text-muted/70 transition focus:border-forest focus:bg-surface focus:ring-4 focus:ring-sage/10 focus:outline-none";
 
 const selectArrow =
   "appearance-none bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20stroke%3D%22%2315120e%22%20stroke-width%3D%222.5%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22/%3E%3C/svg%3E')] bg-[length:16px] bg-[right_1rem_center] bg-no-repeat pr-10";
@@ -106,12 +106,12 @@ export function ContactForm({ services, budgets }: { services: string[]; budgets
       onSubmit={handleSubmit}
       noValidate
       aria-describedby="form-status"
-      className="relative rounded-2xl border border-line bg-surface p-6 shadow-[0_20px_40px_-28px_rgba(23,20,15,0.35)] sm:p-8"
+      className="relative rounded-2xl border border-line bg-surface p-6 shadow-[0_20px_40px_-28px_rgba(61,43,31,0.35)] sm:p-8"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={label}>
-            Name <span className="text-orange-deep" aria-hidden="true">*</span>
+            Name <span className="text-forest" aria-hidden="true">*</span>
           </label>
           <input
             id="name"
@@ -131,7 +131,7 @@ export function ContactForm({ services, budgets }: { services: string[]; budgets
 
         <div>
           <label htmlFor="email" className={label}>
-            Email <span className="text-orange-deep" aria-hidden="true">*</span>
+            Email <span className="text-forest" aria-hidden="true">*</span>
           </label>
           <input
             id="email"
@@ -171,7 +171,7 @@ export function ContactForm({ services, budgets }: { services: string[]; budgets
 
         <div>
           <label htmlFor="service" className={label}>
-            Service needed <span className="text-orange-deep" aria-hidden="true">*</span>
+            Service needed <span className="text-forest" aria-hidden="true">*</span>
           </label>
           <select
             id="service"
@@ -197,7 +197,7 @@ export function ContactForm({ services, budgets }: { services: string[]; budgets
 
         <div>
           <label htmlFor="budget" className={label}>
-            Budget (USD) <span className="text-orange-deep" aria-hidden="true">*</span>
+            Budget (USD) <span className="text-forest" aria-hidden="true">*</span>
           </label>
           <select
             id="budget"
@@ -223,7 +223,7 @@ export function ContactForm({ services, budgets }: { services: string[]; budgets
 
         <div className="sm:col-span-2">
           <label htmlFor="message" className={label}>
-            Project details <span className="text-orange-deep" aria-hidden="true">*</span>
+            Project details <span className="text-forest" aria-hidden="true">*</span>
           </label>
           <textarea
             id="message"

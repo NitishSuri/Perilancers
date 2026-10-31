@@ -29,7 +29,7 @@ function Dashboard() {
     <div className="flex h-full gap-3">
       <div className={`hidden w-14 flex-col gap-2 p-2 sm:flex ${panel}`}>
         {[0, 1, 2, 3].map((i) => (
-          <div key={i} className={i === 0 ? "h-1.5 rounded bg-orange" : "h-1.5 rounded bg-ink/10"} />
+          <div key={i} className={i === 0 ? "h-1.5 rounded bg-sage" : "h-1.5 rounded bg-ink/10"} />
         ))}
       </div>
       <div className="flex flex-1 flex-col gap-2.5">
@@ -46,7 +46,7 @@ function Dashboard() {
             <m.div
               key={i}
               style={{ height: `${h}%`, originY: 1 }}
-              className={`flex-1 rounded-sm ${i === 7 ? "bg-orange" : "bg-ink/80"}`}
+              className={`flex-1 rounded-sm ${i === 7 ? "bg-sage" : "bg-forest/85"}`}
               initial={{ scaleY: 0 }}
               whileInView={{ scaleY: 1 }}
               viewport={inView}
@@ -71,7 +71,7 @@ function CloudMigration() {
       </div>
       <div className="h-px w-6 bg-ink/25 sm:w-12" />
       <div className="flex size-16 items-center justify-center rounded-2xl border border-line bg-surface shadow-sm sm:size-20">
-        <Cloud className="size-8 text-orange-deep" />
+        <Cloud className="size-8 text-forest" />
       </div>
       <div className="h-px w-6 bg-ink/25 sm:w-12" />
       <div className="grid grid-cols-2 gap-1.5">
@@ -87,7 +87,7 @@ function Chat() {
   return (
     <div className="mx-auto flex h-full max-w-xs flex-col justify-center gap-2.5">
       <m.div
-        className="self-end rounded-2xl rounded-br-sm bg-orange-deep px-3 py-2 text-xs text-white"
+        className="self-end rounded-2xl rounded-br-sm bg-forest px-3 py-2 text-xs text-surface"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={inView}
@@ -102,7 +102,7 @@ function Chat() {
         viewport={inView}
         transition={{ delay: 0.7, duration: 0.4 }}
       >
-        <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-orange/15 text-orange-deep">
+        <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-sage/15 text-forest">
           <Bot className="size-4" />
         </div>
         <div className="rounded-2xl rounded-bl-sm border border-line bg-surface px-3 py-2 text-xs">
@@ -121,7 +121,7 @@ function Agent() {
   ];
   return (
     <div className="flex h-full items-center justify-center gap-4 sm:gap-6">
-      <div className="flex size-14 shrink-0 items-center justify-center rounded-full bg-orange/15 text-orange-deep">
+      <div className="flex size-14 shrink-0 items-center justify-center rounded-full bg-sage/15 text-forest">
         <Bot className="size-7" />
       </div>
       <div className="flex flex-col gap-2">
@@ -129,7 +129,7 @@ function Agent() {
           <div key={label} className="flex items-center gap-2">
             <div className="h-px w-6 bg-ink/20 sm:w-10" />
             <span className="flex items-center gap-1.5 rounded-md border border-line bg-surface px-2 py-1 font-mono text-[11px]">
-              <Icon className="size-3.5 text-orange-deep" />
+              <Icon className="size-3.5 text-forest" />
               {label}
             </span>
             <span className="text-xs text-green">✓</span>
@@ -146,7 +146,7 @@ function Docs() {
       <div className="flex gap-1.5">
         {[0, 1, 2].map((i) => (
           <div key={i} className={`flex h-24 w-14 flex-col gap-1.5 p-2 ${panel}`}>
-            <FileText className="size-4 text-orange-deep" />
+            <FileText className="size-4 text-forest" />
             {[0, 1, 2, 3].map((l) => (
               <div key={l} className="h-1 rounded bg-ink/15" style={{ width: `${90 - l * 15}%` }} />
             ))}
@@ -154,7 +154,7 @@ function Docs() {
         ))}
       </div>
       <div className="max-w-[9rem] rounded-xl border border-line bg-surface p-2.5 text-[11px] text-ink">
-        <Sparkles className="mb-1 size-3.5 text-orange-deep" />
+        <Sparkles className="mb-1 size-3.5 text-forest" />
         Refunds are allowed within 30 days.
         <span className="mt-1 block font-mono text-[10px] text-muted">source: policy.pdf</span>
       </div>
@@ -170,7 +170,7 @@ function Brand() {
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex gap-2">
-          {["bg-orange", "bg-sun", "bg-surface", "bg-ink"].map((c) => (
+          {["bg-sage", "bg-sun", "bg-surface", "bg-ink"].map((c) => (
             <div key={c} className={`size-7 rounded-full border border-line ${c}`} />
           ))}
         </div>

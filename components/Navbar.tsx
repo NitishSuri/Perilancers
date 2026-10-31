@@ -55,7 +55,7 @@ export function Navbar({ items, ctaHref }: { items: NavItem[]; ctaHref: string }
                 >
                   {item.label}
                   {item.highlight && (
-                    <span className="rounded-full bg-orange/10 px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-orange-deep uppercase">
+                    <span className="rounded-full bg-sage/10 px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-forest uppercase">
                       New
                     </span>
                   )}
@@ -88,7 +88,7 @@ export function Navbar({ items, ctaHref }: { items: NavItem[]; ctaHref: string }
       <m.div
         aria-hidden="true"
         style={{ scaleX: progress }}
-        className="absolute inset-x-0 -bottom-px h-0.5 origin-left bg-orange"
+        className="absolute inset-x-0 -bottom-px h-0.5 origin-left bg-forest"
       />
 
       <AnimatePresence initial={false}>
@@ -113,7 +113,7 @@ export function Navbar({ items, ctaHref }: { items: NavItem[]; ctaHref: string }
                     >
                       {item.label}
                       {item.highlight && (
-                        <span className="rounded-full bg-orange/10 px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-orange-deep uppercase">
+                        <span className="rounded-full bg-sage/10 px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-forest uppercase">
                           New
                         </span>
                       )}

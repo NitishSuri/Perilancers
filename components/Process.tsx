@@ -3,6 +3,7 @@ import { DrawLine } from "./ui/DrawLine";
 import { Reveal } from "./ui/Reveal";
 import { Section } from "./ui/Section";
 import { SectionHeading } from "./ui/SectionHeading";
+import { DoodleIcon } from "@/components/ui/Doodle";
 
 export function Process() {
   return (
@@ -18,8 +19,8 @@ export function Process() {
           {processSteps.map(({ title, description, icon: Icon }, i) => (
             <li key={title}>
               <Reveal delay={0.1 + i * 0.1} className="flex gap-5 lg:flex-col lg:items-center lg:text-center">
-                <div className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full border border-line bg-surface shadow-sm">
-                  <Icon className="size-5 text-orange-deep" aria-hidden="true" />
+                <div className="relative z-10 rounded-full bg-paper">
+                  <DoodleIcon icon={Icon} variant={i} />
                 </div>
                 <div>
                   <p className="text-xs font-semibold tracking-[0.18em] text-muted uppercase lg:mt-4">

@@ -1,12 +1,12 @@
-import { Check } from "lucide-react";
 import { benefits, whySection } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./ui/Reveal";
 import { Section } from "./ui/Section";
 import { SectionHeading } from "./ui/SectionHeading";
+import { DoodleCheck, DoodleIcon } from "@/components/ui/Doodle";
 
 const tile =
-  "group flex h-full flex-col rounded-3xl border border-line bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-ink/15 hover:shadow-[0_24px_48px_-28px_rgba(23,20,15,0.35)] motion-reduce:hover:translate-y-0 sm:p-7";
+  "group flex h-full flex-col rounded-3xl border border-line bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-ink/15 hover:shadow-[0_24px_48px_-28px_rgba(61,43,31,0.35)] motion-reduce:hover:translate-y-0 sm:p-7";
 
 /** Visual for "One team, end to end": every discipline in one row. */
 function CoverageVisual() {
@@ -18,7 +18,7 @@ function CoverageVisual() {
           key={r}
           className="inline-flex items-center gap-1.5 rounded-full border border-line bg-paper px-3 py-1.5 text-sm"
         >
-          <Check className="size-3.5 text-green" />
+          <DoodleCheck className="size-3.5" />
           {r}
         </span>
       ))}
@@ -33,13 +33,13 @@ function MilestoneVisual() {
     <div aria-hidden="true" className="mt-6">
       <div className="relative flex justify-between">
         <span className="absolute top-2 right-2 left-2 h-px bg-line" />
-        <span className="absolute top-2 left-2 h-px w-2/3 bg-orange" />
+        <span className="absolute top-2 left-2 h-px w-2/3 bg-sage" />
         {milestones.map((m, i) => (
           <div key={m} className="relative flex flex-col items-center gap-2">
             <span
               className={cn(
                 "size-4 rounded-full border-2",
-                i < 3 ? "border-orange bg-orange" : "border-line bg-surface",
+                i < 3 ? "border-sage bg-sage" : "border-line bg-surface",
               )}
             />
             <span className="text-xs text-muted">{m}</span>
@@ -63,9 +63,7 @@ export function WhyUs() {
           <li key={title} className={cn(spans[i], (i === 0 || i === 5) && "sm:col-span-2")}>
             <Reveal delay={(i % 3) * 0.06} className="h-full">
               <div className={tile}>
-                <span className="flex size-11 items-center justify-center rounded-xl bg-orange/10 text-orange-deep">
-                  <Icon className="size-5" aria-hidden="true" />
-                </span>
+                <DoodleIcon icon={Icon} variant={i} />
                 <h3 className="mt-5 text-lg font-bold">{title}</h3>
                 <p className="mt-2 text-muted">{description}</p>
                 {i === 0 && <CoverageVisual />}

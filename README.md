@@ -10,8 +10,6 @@ Search the project for `YOUR-` to find every placeholder that still needs a real
 
 | Placeholder | Where |
 | --- | --- |
-| `https://YOUR-DOMAIN.com` | `site.url`: canonical URL, sitemap, Open Graph |
-| `YOUR-BUSINESS-EMAIL@YOUR-DOMAIN.com` | `site.email` |
 | `YOUR-WHATSAPP-NUMBER-WITH-COUNTRY-CODE` | `whatsappNumber`, digits only, e.g. `15551234567` |
 | `YOUR-COMPANY-PAGE`, `YOUR-*-PROFILE` | LinkedIn URLs |
 
@@ -47,32 +45,51 @@ npm run dev                  # http://localhost:3000
 
 Other scripts: `npm run build`, `npm start`, `npm run lint`, `npm run typecheck`.
 
-## Set up Resend (contact form email)
+## Contact form setup
 
-1. Create an account at [resend.com](https://resend.com).
-2. **API key:** Dashboard → API Keys → Create. Copy it into `RESEND_API_KEY`.
-3. **Recipient:** set `CONTACT_TO_EMAIL` to the inbox that should receive enquiries (comma-separate multiple addresses).
-4. **Quick test:** with no `CONTACT_FROM_EMAIL`, emails are sent from `onboarding@resend.dev`. That sender only delivers to the email you signed up to Resend with.
-5. **Production:** Dashboard → Domains → Add your domain, add the DNS records Resend shows you (SPF/DKIM), wait for "Verified", then set
-   `CONTACT_FROM_EMAIL="Perilancers Website <hello@your-domain.com>"`.
+The form needs at least one destination. If both are configured, enquiries go to both,
+and a submission succeeds as long as one of them accepts it.
 
-The visitor's email is set as `reply-to`, so you can reply directly from your inbox.
-If the keys are missing, the form shows a friendly message pointing people to your email address.
+### Option 1: Google Sheet + email notification (recommended to start)
+
+Every enquiry becomes a new row in a Google Sheet, and an email notification goes to **work@perilancers.com**.
+No domain verification needed.
+
+1. Open the enquiries sheet (its ID is already set in the script), or set `SHEET_ID` in the script to a different sheet.
+2. In the sheet: **Extensions → Apps Script**. Paste the contents of [`scripts/google-sheets-contact.gs`](scripts/google-sheets-contact.gs).
+3. Change `SECRET` at the top to a long random string.
+4. **Deploy → New deployment → Web app**. Execute as: *Me*. Who has access: *Anyone*. Approve the permissions.
+5. Copy the Web app URL (ends in `/exec`) and set these environment variables (locally in `.env.local`, and in Vercel):
+   - `GOOGLE_SHEETS_WEBHOOK_URL` = the `/exec` URL
+   - `GOOGLE_SHEETS_SECRET` = the same secret as in the script
+
+Keep the URL and secret private: they belong in environment variables only, never in the site's code.
+
+### Option 2: Email via Resend
+
+Emails come from **noreply@perilancers.com** to **work@perilancers.com**.
+
+1. Create an account at [resend.com](https://resend.com) and an API key. Set it as `RESEND_API_KEY`.
+2. **Domains → Add `perilancers.com`**, add the DNS records Resend shows you, and wait for "Verified".
+3. Optional overrides: `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`.
+
+The visitor's email is used as reply-to in both options, so you can reply straight from your inbox.
+If nothing is configured, the form asks people to email work@perilancers.com directly.
 
 ## Deploy to Vercel
 
 1. Push this repository to GitHub.
 2. In [Vercel](https://vercel.com/new), import the repository. The framework preset (Next.js) is detected automatically; no build settings need changing.
-3. Under **Settings → Environment Variables**, add `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` for Production (and Preview if you want the form to work there).
+3. Under **Settings → Environment Variables**, add `GOOGLE_SHEETS_WEBHOOK_URL` and `GOOGLE_SHEETS_SECRET` (and/or `RESEND_API_KEY`) for Production, and Preview if you want the form to work there.
 4. Deploy.
 
 ### Custom domain
 
-1. Vercel project → **Settings → Domains** → add `your-domain.com` and `www.your-domain.com`.
+1. Vercel project → **Settings → Domains** → add `perilancers.com` and `www.perilancers.com`.
 2. At your domain registrar, add the DNS records Vercel shows (typically an `A` record for the apex and a `CNAME` for `www`), or point your nameservers to Vercel.
-3. Choose which one is primary (e.g. apex) and redirect the other to it.
+3. Make `perilancers.com` the primary domain and redirect `www.perilancers.com` to it.
 4. Make sure `site.url` in `lib/content.ts` matches the primary domain exactly, then redeploy.
-5. Submit `https://your-domain.com/sitemap.xml` in Google Search Console.
+5. Submit `https://perilancers.com/sitemap.xml` in Google Search Console.
 
 ## Project structure
 

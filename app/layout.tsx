@@ -9,6 +9,7 @@ import { Navbar } from "@/components/Navbar";
 import { ctaHref, nav, site, team } from "@/lib/content";
 import { siteGraph } from "@/lib/seo";
 import "./globals.css";
+import { DoodleDefs } from "@/components/ui/Doodle";
 
 // ─── Analytics ────────────────────────────────────────────────────────────────
 // Google Analytics 4 turns on automatically when NEXT_PUBLIC_GA_ID is set
@@ -74,7 +75,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F6F1E7",
+  themeColor: "#FBF9F1",
   colorScheme: "light",
 };
 
@@ -91,6 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <DoodleDefs />
         <MotionProvider>
           <Navbar items={nav} ctaHref={ctaHref} />
           {children}

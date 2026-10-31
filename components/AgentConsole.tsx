@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const kindStyle = {
   think: { tag: "think", color: "text-amber" },
-  tool: { tag: "tool ", color: "text-orange-deep" },
+  tool: { tag: "tool ", color: "text-forest" },
   done: { tag: "done ", color: "text-green" },
   human: { tag: "you  ", color: "text-ink" },
 } as const;
@@ -49,13 +49,13 @@ export function AgentConsole() {
     <div
       role="img"
       aria-label="Animated example: an AI agent plans a website launch, uses design, build, and SEO tools, then waits for human approval."
-      className="relative overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_40px_80px_-40px_rgba(23,20,15,0.35)]"
+      className="relative overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_40px_80px_-40px_rgba(61,43,31,0.35)]"
     >
       {/* Window chrome */}
       <div className="flex items-center gap-2 border-b border-line bg-paper/60 px-4 py-3">
-        <span className="size-3 rounded-full bg-[#ef6a5a]" />
-        <span className="size-3 rounded-full bg-sun" />
-        <span className="size-3 rounded-full bg-[#5cb85c]" />
+        <span className="size-3 rounded-full bg-line" />
+        <span className="size-3 rounded-full bg-sage-light" />
+        <span className="size-3 rounded-full bg-sage" />
         <span className="ml-3 font-mono text-xs text-muted">{agentConsole.title}</span>
         <span className="ml-auto flex items-center gap-1.5 text-[11px] font-semibold tracking-wide text-green uppercase">
           <span className="size-2 rounded-full bg-green" />
@@ -65,7 +65,7 @@ export function AgentConsole() {
 
       <div className="min-h-[19rem] p-4 font-mono text-[12.5px] leading-relaxed sm:p-5 sm:text-[13px]">
         <p className="text-muted">
-          <span className="text-orange-deep">❯</span> agent.<span className="text-ink">{agentConsole.task}</span>
+          <span className="text-forest">❯</span> agent.<span className="text-ink">{agentConsole.task}</span>
         </p>
 
         <ul className="mt-3 space-y-1.5">
@@ -85,7 +85,7 @@ export function AgentConsole() {
                 <span className={s.kind === "tool" ? "text-ink/70" : "text-ink"}>
                   {text}
                   {typing && (
-                    <span className="ml-0.5 inline-block h-3.5 w-1.5 translate-y-0.5 animate-blink bg-orange-deep" />
+                    <span className="ml-0.5 inline-block h-3.5 w-1.5 translate-y-0.5 animate-blink bg-forest" />
                   )}
                 </span>
               </m.li>
@@ -95,7 +95,7 @@ export function AgentConsole() {
 
         {finished && (
           <m.div initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} className="mt-4 flex gap-2">
-            <span className="rounded-md bg-ink px-3 py-1.5 font-sans text-xs font-semibold text-paper">Approve</span>
+            <span className="rounded-md bg-forest px-3 py-1.5 font-sans text-xs font-semibold text-surface">Approve</span>
             <span className="rounded-md border border-line px-3 py-1.5 font-sans text-xs font-semibold text-ink/80">
               Edit plan
             </span>

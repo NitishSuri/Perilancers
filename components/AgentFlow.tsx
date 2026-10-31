@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { BrainCircuit, CircleCheck, UserCheck, Wrench, Zap, type LucideIcon } from "lucide-react";
 import { agentFlow } from "@/lib/content";
 import { cn } from "@/lib/utils";
+import { DoodleIcon } from "./ui/Doodle";
 import { Reveal } from "./ui/Reveal";
 
 const icons: LucideIcon[] = [Zap, BrainCircuit, Wrench, UserCheck, CircleCheck];
@@ -23,14 +24,7 @@ export function AgentFlow() {
                     human ? "border-sun bg-sun/15" : "border-line bg-surface",
                   )}
                 >
-                  <span
-                    className={cn(
-                      "flex size-9 shrink-0 items-center justify-center rounded-lg",
-                      human ? "bg-sun/30 text-amber" : "bg-orange/10 text-orange-deep",
-                    )}
-                  >
-                    <Icon className="size-5" aria-hidden="true" />
-                  </span>
+                  <DoodleIcon icon={Icon} variant={i} size="sm" />
                   <div>
                     <p className="font-semibold">{step.label}</p>
                     <p className="text-sm text-muted">{step.detail}</p>
@@ -42,7 +36,7 @@ export function AgentFlow() {
               <li aria-hidden="true" className="relative mx-auto h-7 w-px bg-ink/15 lg:mx-0 lg:h-px lg:w-8 lg:shrink-0">
                 <span
                   style={{ animationDelay: `${i * 0.6}s` }}
-                  className="absolute left-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 animate-packet-y rounded-full bg-orange lg:top-1/2 lg:left-0 lg:animate-packet"
+                  className="absolute left-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 animate-packet-y rounded-full bg-sage lg:top-1/2 lg:left-0 lg:animate-packet"
                 />
               </li>
             )}

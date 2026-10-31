@@ -2,8 +2,9 @@ import { Mail } from "lucide-react";
 import { budgetOptions, contactSection, serviceOptions, site, team } from "@/lib/content";
 import { ContactForm } from "./ContactForm";
 import { LightRays } from "./LightRays";
-import { LinkedInIcon, WhatsAppIcon } from "./icons";
-import { buttonClass } from "./ui/ButtonLink";
+import { LinkedInIcon } from "./icons";
+// import { WhatsAppIcon } from "./icons";
+// import { buttonClass } from "./ui/ButtonLink";
 import { cardClass, cn } from "@/lib/utils";
 import { Reveal } from "./ui/Reveal";
 import { Section } from "./ui/Section";
@@ -21,14 +22,15 @@ export function Contact() {
             <h3 className="text-xl font-bold">Reach us directly</h3>
             <a
               href={`mailto:${site.email}`}
-              className="mt-5 flex items-center gap-3 break-all transition-colors hover:text-orange-deep"
+              className="mt-5 flex items-center gap-3 break-all transition-colors hover:text-forest"
             >
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-orange/10 text-orange-deep">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-sage/10 text-forest">
                 <Mail className="size-5" aria-hidden="true" />
               </span>
               {site.email}
             </a>
 
+            {/* WhatsApp hidden for now. See the note in lib/content.ts to re-enable.
             <a
               href={site.whatsappUrl}
               target="_blank"
@@ -39,6 +41,7 @@ export function Contact() {
               Chat on WhatsApp
               <span className="sr-only">(opens in a new tab)</span>
             </a>
+            */}
 
             <div className="mt-7 border-t border-line pt-6">
               <p className="text-xs font-semibold tracking-[0.18em] text-muted uppercase">Connect on LinkedIn</p>
@@ -49,7 +52,7 @@ export function Contact() {
                       href={p.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2.5 text-sm text-ink/85 transition-colors hover:text-orange-deep"
+                      className="inline-flex items-center gap-2.5 text-sm text-ink/85 transition-colors hover:text-forest"
                     >
                       <LinkedInIcon className="size-4" />
                       {p.name}
@@ -66,7 +69,7 @@ export function Contact() {
             <ol className="mt-4 space-y-3">
               {contactSection.nextSteps.map((step, i) => (
                 <li key={step} className="flex gap-3 text-muted">
-                  <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-orange/10 text-xs font-semibold text-orange-deep">
+                  <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-sage/10 text-xs font-semibold text-forest">
                     {i + 1}
                   </span>
                   {step}

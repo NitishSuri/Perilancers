@@ -38,7 +38,7 @@ export function Team() {
                   <Avatar member={member} />
                   <div className="min-w-0">
                     <h3 className="text-2xl font-bold">{member.name}</h3>
-                    <p className="mt-1 text-sm font-medium text-orange-deep">{member.role}</p>
+                    <p className="mt-1 text-sm font-medium text-forest">{member.role}</p>
                   </div>
                 </div>
                 <p className="mt-6 flex-1 text-muted">{member.bio}</p>
@@ -53,7 +53,7 @@ export function Team() {
                   href={member.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-semibold text-ink/80 transition-colors hover:text-orange-deep"
+                  className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-semibold text-ink/80 transition-colors hover:text-forest"
                 >
                   <LinkedInIcon className="size-5" />
                   <span>

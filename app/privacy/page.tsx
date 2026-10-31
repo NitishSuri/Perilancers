@@ -30,7 +30,7 @@ const sections: { title: string; body: React.ReactNode }[] = [
             budget range, and project details.
           </li>
           <li>
-            <strong>Direct messages:</strong> anything you send us by email, WhatsApp, or LinkedIn.
+            <strong>Direct messages:</strong> anything you send us by email or LinkedIn.
           </li>
           <li>
             <strong>Technical data:</strong> our hosting provider may process standard server logs (such as IP address,
@@ -124,11 +124,11 @@ export default function PrivacyPage() {
   return (
     <main id="main" tabIndex={-1} className="outline-none">
       <Container className="max-w-3xl py-20 sm:py-28">
-        <p className="text-xs font-semibold tracking-[0.18em] text-orange-deep uppercase">Legal</p>
+        <p className="text-xs font-semibold tracking-[0.18em] text-forest uppercase">Legal</p>
         <h1 className="mt-3 text-5xl font-bold">Privacy Policy</h1>
         <p className="mt-4 text-muted">Last updated: {privacyLastUpdated}</p>
 
-        <div className="mt-12 space-y-10 text-muted [&_a]:text-ink [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-orange-deep [&_li]:mt-2 [&_p+p]:mt-3 [&_p+ul]:mt-3 [&_strong]:text-ink [&_ul]:list-disc [&_ul]:pl-5 [&_ul+p]:mt-3">
+        <div className="mt-12 space-y-10 text-muted [&_a]:text-ink [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-forest [&_li]:mt-2 [&_p+p]:mt-3 [&_p+ul]:mt-3 [&_strong]:text-ink [&_ul]:list-disc [&_ul]:pl-5 [&_ul+p]:mt-3">
           {sections.map((s) => (
             <section key={s.title}>
               <h2 className="mb-3 text-xl font-bold text-ink">{s.title}</h2>

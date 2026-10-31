@@ -11,7 +11,7 @@ export function LightRays({ className }: { className?: string }) {
       )}
     >
       {/* Glow at the light source */}
-      <div className="absolute -top-40 left-1/2 h-80 w-[46rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(255,197,61,0.45),transparent)]" />
+      <div className="absolute -top-40 left-1/2 h-80 w-[46rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(141,164,126,0.45),transparent)]" />
       <div className="light-rays absolute top-0 left-1/2 h-[46rem] w-[88rem] animate-rays" />
       <div className="light-rays absolute top-0 left-1/2 h-[40rem] w-[70rem] animate-rays-slow opacity-70" />
     </div>

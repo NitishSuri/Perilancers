@@ -51,7 +51,7 @@ export function GET() {
     "",
     `- Website: ${site.url}`,
     `- Email: ${site.email}`,
-    `- Contact form: ${site.url}/#contact`,
+    `- Contact: email ${site.email} or see ${site.url}/#contact`,
     `- LinkedIn: ${site.linkedinUrl}`,
     "",
   ];

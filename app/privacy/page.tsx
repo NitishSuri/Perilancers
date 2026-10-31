@@ -26,8 +26,8 @@ const sections: { title: string; body: React.ReactNode }[] = [
         <p>We only collect information you choose to give us, plus basic technical data needed to run the site:</p>
         <ul>
           <li>
-            <strong>Contact form:</strong> your name, email, company (optional), the service you&apos;re interested in,
-            budget range, and project details.
+            <strong>Enquiries:</strong> your name, email address, and anything you include about your company and
+            project when you email us.
           </li>
           <li>
             <strong>Direct messages:</strong> anything you send us by email or LinkedIn.
@@ -69,9 +69,6 @@ const sections: { title: string; body: React.ReactNode }[] = [
             <strong>Vercel:</strong> website hosting.
           </li>
           <li>
-            <strong>Resend:</strong> delivering contact form submissions to our inbox.
-          </li>
-          <li>
             <strong>Google Analytics</strong> (if enabled): website usage statistics.
           </li>
         </ul>
@@ -87,10 +84,6 @@ const sections: { title: string; body: React.ReactNode }[] = [
           We may use Google Analytics to understand how visitors use the site (for example, which pages are visited and
           how people found us). Google Analytics uses cookies and collects data such as approximate location, device,
           and browser. We do not use advertising cookies or sell this data.
-        </p>
-        <p>
-          When you submit the contact form, we also record how you found us (such as the referring website or campaign
-          link) so we know which marketing works.
         </p>
       </>
     ),

@@ -51,7 +51,7 @@ export const site = {
   tagline: "One small team for your entire digital product.",
   description:
     "Perilancers is a two-person tech studio that plans, designs, builds, scales, and markets digital products, and builds AI agents and automations that do real work for startups and growing businesses worldwide.",
-  /** Official inbox: shown on the site and where contact form submissions are delivered. */
+  /** Official inbox: shown on the site and used for all enquiries. */
   email: "work@perilancers.com",
   // whatsappUrl: `https://wa.me/${whatsappNumber}`,
   linkedinUrl: "https://www.linkedin.com/company/YOUR-COMPANY-PAGE",
@@ -810,7 +810,7 @@ export const faqSection = {
   eyebrow: "FAQ",
   title: "Questions,",
   highlight: "answered",
-  description: "Can't find what you're looking for? Just ask us in the contact form.",
+  description: "Can't find what you're looking for? Just email us at work@perilancers.com.",
 };
 
 /** Written answer-first so search engines and AI assistants can quote them directly. */
@@ -906,6 +906,35 @@ export const contactSection = {
   title: "Let's build something",
   highlight: "great together",
   description: "Tell us a little about your project. We aim to reply within one business day.",
+  /** Email-first contact panel (used while the contact form is turned off). */
+  emailTitle: "Email us about your project",
+  emailText:
+    "Click below to open a ready-to-fill email, or copy our address. A few details up front help us reply with useful next steps.",
+  emailButton: "Write an email",
+  copyButton: "Copy address",
+  emailSubject: "Project enquiry from the Perilancers website",
+  emailBody: [
+    "Hi Perilancers team,",
+    "",
+    "Name:",
+    "Company (optional):",
+    "Service needed (AI agents, web development, design, cloud, product, or marketing):",
+    "Budget range (USD):",
+    "Timeline:",
+    "",
+    "About the project:",
+    "",
+    "",
+    "Thanks!",
+  ].join("\n"),
+  includeTitle: "Helpful to include",
+  include: [
+    "Your name and company",
+    "The service you need",
+    "Budget range in USD",
+    "Timeline or launch date",
+    "Links to anything we should see",
+  ],
   nextStepsTitle: "What happens next",
   nextSteps: [
     "We read your message and reply by email.",
